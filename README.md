@@ -18,26 +18,56 @@ To write a program to perform selection sort and insertion sort using python pro
 4.	Break the loop and insert X.
 5.	Repeat the steps 2 to 4 for sorting all the elements in the array.
 ## Program:
-i)	#Selection Sort
+### Selection Sort
+```Python
+''' 
+Program to sort the elements in the list using the Selection Sort algorithm.
+Developed by: Kishore B
+RegisterNumber: 23013723
+'''
+def selection_sort(array):
+    length=len(array)
+    for i in range(length-1):
+        minIndex=i
+        for j in range(i+1,length):
+            if array[j]<array[minIndex]:
+                minIndex=j
+        array[i],array[minIndex]=array[minIndex],array[i]
+    return array
+    
+array=eval(input())
+print(selection_sort(array))
 ```
-
-
-
-
-
-```
-ii)	#Insertion Sort
-```
-
-
-
-
-
-
+### Insertion Sort
+```Python
+''' 
+Program to sort the elements in the list using the Insertion Sort algorithm.
+Developed by: Kishore B
+RegisterNumber: 23013723
+'''
+def insertion_sort(array):
+    n=len(array)
+    if n<=1:
+        return
+    for i in range(1,n):
+        key=array[i]
+        j=i-1
+        while j>=0 and key<array[j]:
+            array[j+1]=array[j]
+            j-=1
+        array[j+1]=key
+        
+array=eval(input())
+insertion_sort(array)
+print(array)
 ```
 
 ## Output:
+#### Selection sort
+<img width="576" alt="image" src="https://github.com/Nijeesh-bit/Sorting-Algorithm/assets/89188014/dd130a4b-4b0c-45eb-9e44-d4af00f97c60">
 
+#### Insertion sort
+<img width="574" alt="image" src="https://github.com/Nijeesh-bit/Sorting-Algorithm/assets/89188014/5f9143df-54f8-44a2-be97-5cc3c605390b">
 
 ## Result:
 Thus the program is written to perform selection sort and insertion sort using python programming.
